@@ -1,4 +1,4 @@
-支持涂鸦系列开关 - 3.3版本
+支持涂鸦系列智能插座 - 3.3版本
 
 如何获取设备的`local_key`: https://github.com/jasonacox/tinytuya#setup-wizard
 

@@ -1,4 +1,4 @@
-Support Tuya Plug, Switch - Version 3.3
+Support Tuya Smart Plug, Switch - Version 3.3
 
 How to get the `local_key` of devices: https://github.com/jasonacox/tinytuya#setup-wizard
 
