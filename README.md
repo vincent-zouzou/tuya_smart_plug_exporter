@@ -1,5 +1,6 @@
 支持涂鸦系列开关 - 3.3版本
-如果获取设备的`local_key`: https://github.com/jasonacox/tinytuya#setup-wizard
+
+如何获取设备的`local_key`: https://github.com/jasonacox/tinytuya#setup-wizard
 
 ## Run
 ```bash
