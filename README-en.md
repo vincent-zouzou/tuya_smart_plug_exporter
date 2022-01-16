@@ -18,7 +18,7 @@ python:3.10-slim-buster bash
 ```
 #### Build image
 ```bash
-docker build -t tuya_smart_plug_exporter -f Dockerfile .
+docker build -t tuya_smart_plug_exporter -f manifest/Dockerfile .
 ```
 #### Run Docker
 ```bash

@@ -13,6 +13,6 @@ port: 16666
 # 若开启了scan，则只需要有local_key，否则需要有local_key，ip和id。
 devices:
 - name: "WiFi插座（计量版）"
-  local_key: "d0b2ff240beba9aa"
-  ip: "192.168.111.158"
-  id: "60563472ecfabc46e1d3"
+  local_key: "xxxxxxxxxxxxxxxx"
+  ip: "192.168.0.111"
+  id: "yyyyyyyyyyyyyyyyyyyy"
