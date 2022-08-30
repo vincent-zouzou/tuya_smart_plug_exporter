@@ -41,8 +41,10 @@ def load_conf():
         else:
             devices["has_local_key"].append(device)
     # 去重
-    devices["has_local_key"] = de_duplicate(devices["has_local_key"], "local_key")
-    devices["no_local_key"] = de_duplicate(devices["no_local_key"], "local_key")
+    if "has_local_key" in devices:
+        devices["has_local_key"] = de_duplicate(devices["has_local_key"], "local_key")
+    if "no_local_key" in devices:
+        devices["no_local_key"] = de_duplicate(devices["no_local_key"], "local_key")
 
     # 正常的设备放入normal
     for device in devices["has_local_key"]:
@@ -142,7 +144,8 @@ def reload():
 
 if __name__ == '__main__':
     conf_file = {}
-    devices = {"conf_file": [{"": ""}, {"": ""}], "has_local_key": [{"": ""}, {"": ""}]}
+    devices = {"conf_file": [], "has_local_key": []}
+    # devices = {"conf_file": [{"": ""}, {"": ""}], "has_local_key": [{"": ""}, {"": ""}]}
 
     load_conf()
 
@@ -151,17 +154,27 @@ if __name__ == '__main__':
         if conf_file["scan"]["interval"]:
             unit = conf_file["scan"]["interval"][-1]
             num = int(conf_file["scan"]["interval"][0:-1])
-            match unit:
-                case "m":
-                    T = num * 1
-                case "h":
-                    T = num * 60
-                case "d":
-                    T = num * 60 * 24
-                case "w":
-                    T = num * 60 * 24 * 7
-                case _:
-                    T = 60 * 24
+            if unit == "m":
+                T = num * 1
+            elif unit == "h":
+                T = num * 60
+            elif unit == "d":
+                T = num * 60 * 24
+            elif unit == "w":
+                T = num * 60 * 24 * 7
+            else:
+                T = 60 * 24
+            # match unit:
+            #     case "m":
+            #         T = num * 1
+            #     case "h":
+            #         T = num * 60
+            #     case "d":
+            #         T = num * 60 * 24
+            #     case "w":
+            #         T = num * 60 * 24 * 7
+            #     case _:
+            #         T = 60 * 24
         # 默认时间间隔
         else:
             T = 60 * 24

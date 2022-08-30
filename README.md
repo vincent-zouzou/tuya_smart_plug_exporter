@@ -4,6 +4,7 @@
 
 ## Run
 ```bash
+pip install pipenv
 pipenv sync
 pipenv run python main.py
 ```
